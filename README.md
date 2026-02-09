@@ -1,2 +1,2 @@
 # SemiNFT
-SemiNFT project page
+Project page
