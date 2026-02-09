@@ -3,6 +3,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>SemiNFT: Learning to Transfer Presets from Imitation to Appreciation via Hybrid-Sample Reinforcement Learning</title>
     <link href="./public/style.css" rel="stylesheet">
+
   </head>
 
   <body>
@@ -29,12 +30,12 @@
           </em>
         </p>
         <p style="text-align: center; font-size: 20px;">
-          <a href="https://openaccess.thecvf.com/content/ICCV2025W/HiGen/papers/Han_StyleBooth_Image_Style_Editing_with_Multimodal_Instruction_ICCVW_2025_paper.pdf" target="_blank">[Paper]</a>
-          <a href="https://openaccess.thecvf.com/content/ICCV2025W/HiGen/supplemental/Han_StyleBooth_Image_Style_ICCVW_2025_supplemental.pdf" target="_blank">[Supp]</a>
+          <a href="arxiv" target="_blank">[Paper]</a>
+          <a href="" target="_blank">[Supp]</a>
           <a href="./public/bibtex.txt" target="_blank">[BibTeX]</a>
           <!-- <a href="https://modelscope.cn/models/iic/stylebooth/summary" target="_blank">[Model]</a> -->
-          <a href="https://modelscope.cn/models/iic/stylebooth/summary" target="_blank">[Dataset]</a>
-          <a href="https://github.com/modelscope/scepter/blob/main/docs/en/tasks/stylebooth.md" target="_blank">[Code]</a>
+          <a href="comingsoon" target="_blank">[Dataset]</a>
+          <a href="comingsoon" target="_blank">[Code]</a>
         <!-- </p>
         <p style="text-align: center; font-size: 20px;">
           <a href="https://huggingface.co/spaces/modelscope/scepter_studio" target="_blank">[HuggingFace Demo]</a>
@@ -64,6 +65,10 @@
         <p style="font-size: 18px">
           We provide the visualization results of SemiNFT and SA-LUT, Neural Preset, CAP-VSTNet, GPT-Image-1.5, and Nano Banana. Notably, our method does not use points for guidance in the generated results. Notably, our method achieves accurate color alignment at both global and local levels. 
         </p>
+
+      
+        <div class="carousel-wrapper">
+          <button class="carousel-btn prev">❮</button>
         <div id="results-carousel" class="carousel results-carousel">
           <div class="item">
             <!-- TODO: Replace with your research result images -->
@@ -89,12 +94,17 @@
             <!-- Your image here -->
             <img src="./public/images/visualization_2_01.jpg" loading="lazy"/>
             <p class="subtitle has-text-centered">
-              Local details comparisons. Notably, our method achieves best skin-to-skin alignment.
+              1112Local details comparisons. Notably, our method achieves best skin-to-skin alignment.
             </p>
           </div>
           
         </div>
+
+        <button class="carousel-btn next">❯</button>
       </div>
+
+      </div>
+
 
       <div class="content">
         <h2>Black-and-white Photo Colorization</h2>
@@ -123,12 +133,11 @@
 
       <div class="content">
         <h2>BibTex</h2>
-        <code>@InProceedings{Han_2025_ICCV,<br>
+        <code>@article{seminft,<br>
           &nbsp;&nbsp;title={SemiNFT: Learning to Transfer Presets from Imitation to Appreciation via Hybrid-Sample Reinforcement Learning},<br>
-          &nbsp;&nbsp;author={Han, Zhen and Mao, Chaojie and Jiang, Zeyinzi and Pan, Yulin and Zhang, Jingfeng},<br>
-          &nbsp;&nbsp;booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) Workshops},<br>
-          &nbsp;&nbsp;year={2025,<br>
-          &nbsp;&nbsp;pages={1947-1957}<br>
+          &nbsp;&nbsp;author={Yang, Melany and Yu, Yuhang and Weng, Diwang and Chen, Jinwei and Dong, Wei},<br>
+          &nbsp;&nbsp;journal={arXiv preprint arXiv:2602.02xxx},<br>
+          &nbsp;&nbsp;year={2026}<br>
           }
         </code>
       </div>
@@ -144,5 +153,30 @@
         </div>
       </footer>
       <br><br>
+
+    <script>
+      console.log('JS running');
+      const carousel = document.getElementById('results-carousel');
+      const prevBtn = document.querySelector('.carousel-btn.prev');
+      const nextBtn = document.querySelector('.carousel-btn.next');
+      console.log(carousel, prevBtn, nextBtn);
+      
+      nextBtn.addEventListener('click', () => {
+        carousel.scrollBy({
+          left: carousel.clientWidth,
+          behavior: 'smooth'
+        });
+      });
+      
+      prevBtn.addEventListener('click', () => {
+        carousel.scrollBy({
+          left: -carousel.clientWidth,
+          behavior: 'smooth'
+        });
+      });
+    </script>
+      
+
+
   </body>
 </html>

@@ -1,8 +1,6 @@
-@InProceedings{Han_2025_ICCV,
-    author    = {Han, Zhen and Mao, Chaojie and Jiang, Zeyinzi and Pan, Yulin and Zhang, Jingfeng},
-    title     = {StyleBooth: Image Style Editing with Multimodal Instruction},
-    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) Workshops},
-    month     = {October},
-    year      = {2025},
-    pages     = {1947-1957}
+@article{seminft,
+  title=title={SemiNFT: Learning to Transfer Presets from Imitation to Appreciation via Hybrid-Sample Reinforcement Learning}
+  author={Yang, Melany and Yu, Yuhang and Weng, Diwang and Chen, Jinwei and Dong, Wei},
+  journal={arXiv preprint arXiv:2602.02xxx},
+  year={2026}
 }
