@@ -1,0 +1,148 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>SemiNFT: Learning to Transfer Presets from Imitation to Appreciation via Hybrid-Sample Reinforcement Learning</title>
+    <link href="./public/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+      <div class="content">
+        <h1><strong>
+          SemiNFT: Learning to Transfer Presets from Imitation to Appreciation via Hybrid-Sample Reinforcement Learning
+        </strong></h1>
+        <p id="authors">
+          <span><a href=""></a></span>
+          <a href="" style="pointer-events: none; text-decoration:none; color: black;">Melany Yang</a><sup style="margin-left: -7px;">1,2</sup>
+          <a href="" style="pointer-events: none; text-decoration:none; color: black;">Yuhang Yu</a><sup style="margin-left: -7px;">1</sup>
+          <a href="" style="pointer-events: none; text-decoration:none; color: black;">Diwang Weng</a><sup style="margin-left: -7px;">1</sup>
+          <a href="" style="pointer-events: none; text-decoration:none; color: black;">Jinwei Chen</a><sup style="margin-left: -7px;">1</sup>
+          <a href="" style="pointer-events: none; text-decoration:none; color: black;">Wei Dong</a><sup style="margin-left: -7px;">1*</sup>
+          <br><br>
+          <span style="font-size: 22px;"><sup>1</sup>vivo Mobile Communication Co. Ltd, <sup>2</sup>Zhejiang University</span>
+          <!-- <br> -->
+          &nbsp;&nbsp;&nbsp;
+        </p>
+        <img src="./public/images/1_homepage_01.jpg" class="teaser-gif" style="width:100%">
+        <p style="text-align: center; font-size: 18px;">
+          <em>
+            SemiNFT is a <strong>photorealistic preset transfer </strong>method and can be applied to various <strong>color-related tasks</strong>.
+          </em>
+        </p>
+        <p style="text-align: center; font-size: 20px;">
+          <a href="https://openaccess.thecvf.com/content/ICCV2025W/HiGen/papers/Han_StyleBooth_Image_Style_Editing_with_Multimodal_Instruction_ICCVW_2025_paper.pdf" target="_blank">[Paper]</a>
+          <a href="https://openaccess.thecvf.com/content/ICCV2025W/HiGen/supplemental/Han_StyleBooth_Image_Style_ICCVW_2025_supplemental.pdf" target="_blank">[Supp]</a>
+          <a href="./public/bibtex.txt" target="_blank">[BibTeX]</a>
+          <!-- <a href="https://modelscope.cn/models/iic/stylebooth/summary" target="_blank">[Model]</a> -->
+          <a href="https://modelscope.cn/models/iic/stylebooth/summary" target="_blank">[Dataset]</a>
+          <a href="https://github.com/modelscope/scepter/blob/main/docs/en/tasks/stylebooth.md" target="_blank">[Code]</a>
+        <!-- </p>
+        <p style="text-align: center; font-size: 20px;">
+          <a href="https://huggingface.co/spaces/modelscope/scepter_studio" target="_blank">[HuggingFace Demo]</a>
+          <a href="https://www.modelscope.cn/studios/iic/scepter_studio/summary" target="_blank">[ModelScope Demo]</a>
+        </p> -->
+      </div>
+
+      <div class="content">
+        <h2 style="text-align: center;">Abstract</h2>
+        <p>
+          Photorealistic color retouching plays a vital role in visual content creation, yet manual retouching remains inaccessible to non-experts due to its reliance on specialized expertise. Reference-based methods offer a promising alternative by transferring the preset color of a reference image to a source image. However, these approaches often operate as novice learners, performing global color mappings derived from pixel-level statistics, without a true understanding of semantic context or human aesthetics. To address this issue, we propose SemiNFT, a Diffusion Transformer (DiT)-based retouching framework that mirrors the trajectory of human artistic training: beginning with rigid imitation and evolving into intuitive creation. Specifically, SemiNFT is first taught with paired triplets to acquire basic structural preservation and color mapping skills, and then advanced to reinforcement learning (RL) on unpaired data to cultivate nuanced aesthetic perception. Crucially, during the RL stage, to prevent catastrophic forgetting of old skills, we design a hybrid online-offline reward mechanism that anchors aesthetic exploration with structural review. Extensive experiments show that SemiNFT not only outperforms state-of-the-art methods on standard preset transfer benchmarks but also demonstrates remarkable intelligence in zero-shot tasks, such as black-and-white photo colorization and cross-domain (anime-to-photo) preset transfer. These results confirm that SemiNFT transcends simple statistical matching and achieves a sophisticated level of aesthetic comprehension.
+        </p>
+        <!-- <img src="./public/images/head.jpg" class="teaser-gif" style="width:100%"> -->
+      </div>
+
+
+      <div class="content">
+        <h2>Approach</h2>
+        <p style="font-size: 18px">
+          We design a curriculum-style training paradigm inspired by the learning process of a human retouching expert. The process starts with cold-start supervised fine-tuning on paired image triplets to capture fundamental structural relationships between the source image, the reference image, and the retouched image, and subsequently transitions to reinforcement learning on unpaired data to cultivate higher-level aesthetic perception. Additionally, to prevent the model from forgetting the structural preservation skills learned in the cold-start stage, we propose a hybrid online-offline reward mechanism to review old skills. 
+        </p>
+        <img class="summary-img" src="./public/images/2_overview_01.jpg" style="width:100%;"><br><br>
+      </div>
+
+      <div class="content">
+        <h2>Results</h2>
+        <p style="font-size: 18px">
+          We provide the visualization results of SemiNFT and SA-LUT, Neural Preset, CAP-VSTNet, GPT-Image-1.5, and Nano Banana. Notably, our method does not use points for guidance in the generated results. Notably, our method achieves accurate color alignment at both global and local levels. 
+        </p>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <!-- TODO: Replace with your research result images -->
+            <img src="./public/images/visualization_4_01.jpg" loading="lazy"/>
+          </div>
+          <div class="item">
+            <!-- Your image here -->
+            <img src="./public/images/visualization_3_01.jpg" loading="lazy"/>
+          </div>
+          <div class="item">
+            <!-- TODO: Replace with your research result images -->
+            <img src="./public/images/visualization_5_01.jpg" loading="lazy"/>
+          </div>
+          <div class="item">
+            <!-- Your image here -->
+            <img src="./public/images/visualization_6_01.jpg" loading="lazy"/>
+          </div>
+          <div class="item">
+            <!-- TODO: Replace with your research result images -->
+            <img src="./public/images/visualization_1_01.jpg" loading="lazy"/>
+          </div>
+          <div class="item">
+            <!-- Your image here -->
+            <img src="./public/images/visualization_2_01.jpg" loading="lazy"/>
+            <p class="subtitle has-text-centered">
+              Local details comparisons. Notably, our method achieves best skin-to-skin alignment.
+            </p>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="content">
+        <h2>Black-and-white Photo Colorization</h2>
+        <p style="font-size: 18px">
+          SemiNFT achieves impressive colorization results. Although a significant chromatic discrepancy exists between the black-and-white source image and color reference image, our model facilitates precise color mapping by aligning semantic regions, ensuring skin-to-skin and background-to-background consistency, demonstrating spatially coherent and semantically aware color transfer.
+        </p>
+        <img class="summary-img" src="./public/images/bw_projectpage.jpg" style="width:100%;"><br><br>
+      </div>
+
+      <div class="content">
+        <h2>Cross-Domain Preset Transfer</h2>
+        <p style="font-size: 18px">
+          SemiNFT also enables cross-domain preset transfer, such as translating aesthetics between anime images and realistic photographs. SemiNFT strictly preserves the source content while changing only the color and tonal characteristics.
+        </p>
+        <img class="summary-img" src="./public/images/cross_projectpage.jpg" style="width:100%;"><br><br>
+      </div>
+
+      <div class="content">
+        <h2>Text-guided Restoration for Old Photos</h2>
+        <p style="font-size: 18px">
+          SemiNFT can be seamlessly integrated with existing VLMs and Text-to-Image (T2I) generative models to restore vintage photos. Specifically, by utilizing VLM to infer the possible color of the source image, a T2I model can synthesize a high-fidelity reference image for restoration.
+        </p>
+        <img class="summary-img" src="./public/images/text_projectpage.jpg" style="width:100%;"><br><br>
+      </div>
+
+
+      <div class="content">
+        <h2>BibTex</h2>
+        <code>@InProceedings{Han_2025_ICCV,<br>
+          &nbsp;&nbsp;title={SemiNFT: Learning to Transfer Presets from Imitation to Appreciation via Hybrid-Sample Reinforcement Learning},<br>
+          &nbsp;&nbsp;author={Han, Zhen and Mao, Chaojie and Jiang, Zeyinzi and Pan, Yulin and Zhang, Jingfeng},<br>
+          &nbsp;&nbsp;booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) Workshops},<br>
+          &nbsp;&nbsp;year={2025,<br>
+          &nbsp;&nbsp;pages={1947-1957}<br>
+          }
+        </code>
+      </div>
+
+      <br><br>
+      <footer class="footer">
+        <div class="container">
+          <div class="columns is-centered">
+            <!-- <div class="content"> -->
+              website template from <a href="https://dreambooth.github.io/">dreambooth</a>
+            <!-- </div> -->
+          </div>
+        </div>
+      </footer>
+      <br><br>
+  </body>
+</html>
