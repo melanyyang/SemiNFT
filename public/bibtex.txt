@@ -1,6 +1,6 @@
 @article{seminft,
   title=title={SemiNFT: Learning to Transfer Presets from Imitation to Appreciation via Hybrid-Sample Reinforcement Learning}
   author={Yang, Melany and Yu, Yuhang and Weng, Diwang and Chen, Jinwei and Dong, Wei},
-  journal={arXiv preprint arXiv:2602.02xxx},
+  journal={arXiv preprint arXiv:2602.08582},
   year={2026}
 }
